@@ -17,7 +17,7 @@ pipeline {
       steps {
         withCredentials([string(credentialsId: 'my_secret', variable: 'valeur')]) {
             sh '''
-              echo "ceci est un test : $valeur
+              echo "ceci est un test
             '''
         }
       }
