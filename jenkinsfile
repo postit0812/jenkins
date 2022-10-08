@@ -13,5 +13,14 @@ pipeline {
         '''
       }
     }
+    stage('pass credentials') {
+      steps {
+        withCredentials([string(credentialsId: 'my_secret', variable: 'valeur')]) {
+            sh '''
+              echo "ceci est un test : ${valeur}
+            '''
+        }
+      }
+    }
   }
 }
